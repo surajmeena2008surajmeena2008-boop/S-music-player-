@@ -12,21 +12,6 @@
 - Dono layouts (portrait + landscape) ab song ke album art ke rang ke hisaab se adaptive theme lete hain; art na ho to default theme.
 - Landscape mein album art ~4×4 cm (250px) ka, aur chhoti screen par fit hone ke liye apne aap chhota hota hai (size badalna ho to index.html mein `--art`).
 
-## Install problem fix (0.0.5)
-Chrome par **"This app cannot be installed"** aane ka main reason:
-- `manifest.json` mein `"id": "./"` tha — ye relative id Android Chrome mein install fail karwata hai.
-- Ab `id` field hata diya gaya hai (Chrome automatically start_url se id banata hai).
-
-### GitHub par upload (zaroori)
-ZIP extract karke **andar ki saari files aur `icons` folder** repo mein usi jagah upload karein jahan purani `index.html` hai:
-`index.html`, `manifest.json`, `sw.js`, `icons/`.
-
-Sirf `index.html` badalne se install/icon theek nahi hoga.
-
-### Install karne se pehle ye steps zaroor karo:
-1. Purani installed app (agar hai) delete karo.
-2. Chrome → site ke liye **Site settings → Clear & reset** (ya Chrome settings → Privacy → Clear browsing data → Cached images and files + Cookies for this site).
-3. Page **2 baar hard refresh** karo (address bar mein URL daal ke Enter, phir ⋮ → Reload).
-4. Phir ⋮ menu → **Install app** / **Add to Home screen**.
-
-Agar ab bhi nahi hota to Chrome mein `chrome://serviceworker-internals` open karke is site ka service worker unregister karo, phir page refresh karo.
+## GitHub par upload (zaroori)
+ZIP extract karke **andar ki saari 9 files (index.html, manifest.json, sw.js aur 6 png icons)** repo mein usi jagah upload karein jahan purani `index.html` hai: ek saath select karke (folder ki zaroorat nahi, sab files seedhi repo mein). Sirf `index.html` badalne se install/icon theek nahi hoga.
+Commit ke baad purani installed app delete karein, Chrome mein site data clear karein, page do baar refresh karein, phir ⋮ → **Install app**.
